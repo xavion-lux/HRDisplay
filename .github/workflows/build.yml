@@ -2,37 +2,36 @@ name: Create Unity Package
 
 on:
   push:
-    branches: 'master'
-    tags: 'v*.*.*'
+    branches: "master"
+    tags: "v*.*.*"
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - run: |
-        echo "HRDisplay.meta" > metaList
-        find HRDisplay/ -name \*.meta >> metaList
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: |
+          find ./ -name \*.meta >> metaList
 
-    - run: mkdir output
+      - run: mkdir output
 
-    - name: Create unitypackage
-      uses: pCYSl5EDgo/create-unitypackage@master
-      with:
-        package-path: 'output/HRDisplay.unitypackage'
-        include-files: metaList
-        
-    - name: Upload artifact
-      uses: actions/upload-artifact@master
-      with:
-        path: output
-        name: package
-        
-    - name: Publish a release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        files: |
-          output/HRDisplay.unitypackage
+      - name: Create unitypackage
+        uses: pCYSl5EDgo/create-unitypackage@master
+        with:
+          package-path: "output/HRDisplay.unitypackage"
+          include-files: metaList
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@master
+        with:
+          path: output
+          name: package
+
+      - name: Publish a release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            output/HRDisplay.unitypackage
