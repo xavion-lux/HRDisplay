@@ -13,6 +13,7 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
+	<li><a href="#installation">Installation</a></li>
         <li><a href="#usage">Usage</a></li>
         <li><a href="#customization">Customization</a></li>
       </ul>
