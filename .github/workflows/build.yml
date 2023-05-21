@@ -6,13 +6,13 @@ on:
     tags: "v*.*.*"
 
 jobs:
-  echo:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - run: |
-          find ./ -name \*.meta >> metaList
+          find -name \*.meta >> metaList
 
       - run: mkdir output
 
