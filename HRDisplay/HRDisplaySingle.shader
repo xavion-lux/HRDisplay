@@ -1,4 +1,4 @@
-Shader "xavion-lux/HRDisplay"
+﻿Shader "xavion-lux/HRDisplaySingle"
 {
     Properties
     {
@@ -7,9 +7,7 @@ Shader "xavion-lux/HRDisplay"
         _NumberCutoff("Number Cutoff", Range(0, 1)) = 0.5
         [NoscaleOffset] _NumberTex ("Number Texture", 2D) = "" {}
         [NoscaleOffset] _NumberMaskTex ("Number Mask", 2D) = "white" {}
-        _Units ("Units", Range(0, 9)) = 0
-        _Tens ("Tens", Range(0, 9)) = 0
-        _Hundreds ("Hundreds", Range(0, 9)) = 0
+        _BPM ("BPM", Range(0, 255)) = 0
     }
 
     SubShader
@@ -45,9 +43,9 @@ Shader "xavion-lux/HRDisplay"
         }
 
         // offset the UV for the number texture for the desired decimal place (0: hundreds, 1: tens, 2: units)
-        half2 offsetNumber(half2 uv, uint place, uint digit)
+        half2 offsetNumber(half2 uv, uint place, half digit)
         {
-            uv.x += half(0.11) - half(0.063) * place + digit / half(10.0);
+            uv.x += half(0.11) - half(0.063) * place + digit / 10;
             return uv;
         }
 
@@ -58,7 +56,6 @@ Shader "xavion-lux/HRDisplay"
             return uv;
         }
 
-        // legacy code
         // returns the value for the desired decimal place (0: hundreds, 1: tens, 2: units)
         uint getDigit(uint bpm, uint place)
         {
@@ -70,12 +67,10 @@ Shader "xavion-lux/HRDisplay"
             return (bpm / div) % 10;
 		}
 
-        uint _Units;
-        uint _Tens;
-        uint _Hundreds;
+        uint _BPM;
 
         // manipulate the UV for the vert shader to select the desired digit
-        v2f vertNumber(appdata v, uint place, uint digit)
+        v2f vertNumber(appdata v, uint place)
         {
             v2f o;
             o.uv1 = offsetMask(v.uv, place);
@@ -83,7 +78,7 @@ Shader "xavion-lux/HRDisplay"
             o.vertex = UnityObjectToClipPos(v.vertex);
             v.uv = scale(v.uv, 3);
             v.uv.x *= half(0.1); // Tiling
-            o.uv = offsetNumber(v.uv, place, digit);
+            o.uv = offsetNumber(v.uv, place, getDigit(_BPM, place));
             return o;
         }
 
@@ -119,7 +114,7 @@ Shader "xavion-lux/HRDisplay"
 
             v2f vert (appdata v)
             {
-                return vertNumber(v, 0, _Hundreds);
+                return vertNumber(v, 0);
             }
 
             fixed4 frag(v2f i) : SV_Target
@@ -145,7 +140,7 @@ Shader "xavion-lux/HRDisplay"
 
             v2f vert(appdata v)
             {
-                return vertNumber(v, 1, _Tens);
+                return vertNumber(v, 1);
             }
 
             fixed4 frag(v2f i) : SV_Target
@@ -171,7 +166,7 @@ Shader "xavion-lux/HRDisplay"
 
             v2f vert(appdata v)
             {
-                return vertNumber(v, 2, _Units);
+                return vertNumber(v, 2);
             }
 
             fixed4 frag(v2f i) : SV_Target
@@ -197,16 +192,12 @@ Shader "xavion-lux/HRDisplay"
 
             UNITY_DECLARE_TEX2D(_HeartTex);
 
-            uint bpm = 0;
-
             v2f vert(appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
 				
-                uint bpm = _Hundreds * 100 + _Tens * 10 + _Units;
-
-                half targetscale = sin(_Time * bpm * 2) * half(0.8) + 4;
+                half targetscale = sin(_Time * _BPM * 2) * half(0.8) + 4;
 
 				
                 v.uv += half2(-0.325, -0.015);
@@ -219,7 +210,7 @@ Shader "xavion-lux/HRDisplay"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed m = sin(_Time * bpm * 2 + fixed(3.14))/2 + fixed(0.7);
+                fixed m = sin(_Time * _BPM * 2 + fixed(3.14))/2 + fixed(0.7);
                 fixed4 col = UNITY_SAMPLE_TEX2D(_HeartTex, i.uv);
                 col.r *= m;
                 col.g *= m;

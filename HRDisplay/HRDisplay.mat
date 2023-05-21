@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HRMat
+  m_Name: HRDisplay
   m_Shader: {fileID: 4800000, guid: 23836b38b9e73724a92837fd26a352c8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -43,9 +43,12 @@ Material:
     - _BPM: 0
     - _HeartAlphaCutoff: 0.85
     - _HeartCutoff: 0.501
+    - _Hundreds: 0
     - _NumberAlphaCutoff: 0.5
     - _NumberCutoff: 0.414
     - _NumberMaskOffset: -0.1
     - _NumberMaskTiling: 1.16
     - _Scale: 0
+    - _Tens: 0
+    - _Units: 0
     m_Colors: []

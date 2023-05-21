@@ -15,6 +15,10 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
       <ul>
 	<li><a href="#installation">Installation</a></li>
         <li><a href="#usage">Usage</a></li>
+  	<ul>
+	  <li><a href="vrchat">VRChat</a></li>
+	  <li><a href="other">Other</a></li>
+        </ul>
         <li><a href="#customization">Customization</a></li>
       </ul>
     </li>
@@ -24,6 +28,7 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
 </details>
 
 ## Preview
+
 ![Unity_d5PY0tkmWQ](https://github.com/xavion-lux/HRDisplay/assets/57081039/5706b1b9-9f7b-425b-98ee-8c66c4a4c87e)
 
 ## Getting Started
@@ -37,11 +42,13 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
 
 ### Usage
 
-The unitypackage includes a prefab that you can simpy drag and drop where needed.</br>
-Change the displayed value using the `Heart rate` float value in the material properties.
+Two variants of the shader exist. One controlled with a single property, `HRDisplaySingle`, and the other with 3 properties, one for each decimal place. Choose the easiest version to set up with your environment.
 
-This project is made to be used with other projects like [VRCOSC](https://github.com/VolcanicArts/VRCOSC) or [Pulsoid-to-VRChat-OSC](https://github.com/Sonic853/pulsoid-to-vrchat-osc) to control avatar parameters with OSC.</br>
-For now you can go take a look at these projects on how to implement the controls on your avatar.
+Each variant of the shader has one prefab that you can simply drag and drop where needed.</br>
+You can then change the displayed value using the `Hundreds`, `Tens` and `Units` material properties or the `BPM` property depending on which variant of the shader you use.
+
+This shader is made to be used with other projects like [VRCOSC](https://github.com/VolcanicArts/VRCOSC) or [Pulsoid-to-VRChat-OSC](https://github.com/Sonic853/pulsoid-to-vrchat-osc) to control avatar parameters with OSC.</br>
+For now you can go take a look at these projects on how to implement the controls on your avatar to change the displayed value with OSC.
 
 ### Customization
 
