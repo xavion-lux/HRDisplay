@@ -11,8 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - run: |
-          find -name \*.meta >> metaList
+          mv LICENSE.* ./HRDisplay
+          find ./ -name \*.meta >> metaList
 
       - run: mkdir output
 
