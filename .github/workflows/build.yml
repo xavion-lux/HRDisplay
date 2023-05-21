@@ -14,8 +14,10 @@ jobs:
 
       - run: |
           mv LICENSE.* ./HRDisplay
+          mkdir Assets
+          mv HRDisplay ./Assets
           echo "Assets/HRDisplay.meta" > metaList
-          find ./HRDisplay/ -name \*.meta >> metaList
+          find Assets/HRDisplay/ -name \*.meta >> metaList
 
       - run: mkdir output
 
