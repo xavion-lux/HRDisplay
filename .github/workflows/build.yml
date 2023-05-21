@@ -39,5 +39,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          body_path: ./release-body.md
+          generate_release_notes: true
+          append_body: true
           files: |
             output/HRDisplay.unitypackage
