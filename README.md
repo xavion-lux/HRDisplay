@@ -30,7 +30,7 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
 ## Installation
 
 <ol>
-  <li>Download the latest release from [here](https://github.com/xavion-lux/HRDisplay/releases/latest).</li>
+  <li>Download the latest release from <a href="https://github.com/xavion-lux/HRDisplay/releases/latest">here</a>.</li>
 	<li>Import the downloaded unitypackage in your project.</li>
 </ol>
 
