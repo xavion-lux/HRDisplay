@@ -65,6 +65,6 @@ Contributions to the project are therefore welcome.
 
 ## License
 
-The HRDisplay is licensed under the [AGPLv3 License](LICENSE). You are free to use, modify, and distribute the shader as per the terms and conditions of the license.
+HRDisplay is licensed under the [AGPLv3 License](LICENSE). You are free to use, modify, and distribute the shader as per the terms and conditions of the license.
 
 "heart.png" from "[small-n-flat](https://github.com/paomedia/small-n-flat)" by [Paomedia](https://github.com/paomedia) is licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
