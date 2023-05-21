@@ -11,8 +11,6 @@
 /[Mm]emoryCaptures/
 
 Readme.md.meta
-LICENSE.md.meta
-numbers-template.xcf.meta
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
