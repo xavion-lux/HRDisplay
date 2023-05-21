@@ -10,7 +10,8 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
-Readme.md.meta
+README.md.meta
+CHANGELOG.md.meta
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
