@@ -2,7 +2,7 @@ name: Create Unity Package
 
 on:
   push:
-    branches: "master"
+    branches: "**"
     tags: "v*.*.*"
 
 jobs:
