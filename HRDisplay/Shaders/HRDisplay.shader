@@ -21,6 +21,7 @@ Shader "xavion-lux/HRDisplay"
             "DisableBatching" = "False"
             "IgnoreProjector" = "True"
             "PreviewType" = "Plane"
+            "VRCFallback"="Hidden"
         }
 
 		CGINCLUDE
@@ -230,7 +231,4 @@ Shader "xavion-lux/HRDisplay"
             ENDCG
         }
     }
-
-    // this isn't working????
-    Fallback "Transparent/Diffuse"
 }

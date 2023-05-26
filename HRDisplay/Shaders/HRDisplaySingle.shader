@@ -19,6 +19,7 @@
             "DisableBatching" = "False"
             "IgnoreProjector" = "True"
             "PreviewType" = "Plane"
+            "VRCFallback"="Hidden"
         }
 
 		CGINCLUDE
@@ -221,7 +222,4 @@
             ENDCG
         }
     }
-
-    // this isn't working????
-    Fallback "Transparent/Diffuse"
 }
