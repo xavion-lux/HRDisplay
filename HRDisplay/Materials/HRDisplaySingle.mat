@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HRDisplaySingle
-  m_Shader: {fileID: 4800000, guid: faa5534c81d4dbf46a8333efce50285b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3a774b7254dfd794b91579f82f4b1321, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HRDisplay
-  m_Shader: {fileID: 4800000, guid: 23836b38b9e73724a92837fd26a352c8, type: 3}
+  m_Name: HRDisplayTriple
+  m_Shader: {fileID: 4800000, guid: 3ae11e5ae589d8f49ae84413b9c2f10e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

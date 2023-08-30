@@ -1,4 +1,4 @@
-Shader "xavion-lux/HRDisplay"
+Shader "xavion-lux/HRDisplayTriple"
 {
     Properties
     {
@@ -37,6 +37,7 @@ Shader "xavion-lux/HRDisplay"
             half2 uv : TEXCOORD0;   // used for the number
             half2 uv1 : TEXCOORD1;  // used for the alpha mask
             int place : TEXCOORD2;  // used to pass the place (0: hundreds, 1: tens, 2: units) we want to draw and avoid calculating it twice
+            int bpm : TEXCOORD3;   // used to pass the bpm to the pixel shader
         };
 
         // scale the UV to the desired size
@@ -205,9 +206,9 @@ Shader "xavion-lux/HRDisplay"
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
 				
-                uint bpm = _Hundreds * 100 + _Tens * 10 + _Units;
+                o.bpm = _Hundreds * 100 + _Tens * 10 + _Units;
 
-                half targetscale = sin(_Time * bpm * 2) * half(0.8) + 4;
+                half targetscale = sin(_Time * o.bpm * 2) * half(0.8) + 4;
 
 				
                 v.uv += half2(-0.325, -0.015);
@@ -220,7 +221,7 @@ Shader "xavion-lux/HRDisplay"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed m = sin(_Time * bpm * 2 + fixed(3.14))/2 + fixed(0.7);
+                fixed m = sin(_Time * i.bpm * 2 + fixed(3.14))/2 + fixed(0.7);
                 fixed4 col = UNITY_SAMPLE_TEX2D(_HeartTex, i.uv);
                 col.r *= m;
                 col.g *= m;
