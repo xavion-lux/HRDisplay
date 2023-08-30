@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb122659f724ebf85fe095ac02dc339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 9100000, guid: 87159e98566cce24fbbdc5409fd76bab, type: 2}
+  animator: {fileID: 9100000, guid: 2a2193e6c7885bb45b27220bae2caff0, type: 2}
   layerType: 5
   deleteAttachedAnimator: 0
   pathMode: 0
