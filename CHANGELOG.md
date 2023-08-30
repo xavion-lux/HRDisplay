@@ -1,9 +1,9 @@
 ### Changelog
 
-This release aim at facilitating the use of the shader with already existing OSC solutions for VRChat and to mitigate the lack of precision when using a single float value to set the heart rate.
+I renamed shaders and moved files in this release so to avoid any problems please delete older versions from your project before updating. (Sorry)
 
-- Renamed HRDisplay to HRDisplaySingle (because it only uses one property to set the value)
-- Replaced HRDisplay with new version better adapted for use with existing OSC softwares for VRChat
-  - Added `_Hundreds`, `_Tens` and `_Units` properties to HRDisplay
-- Renamed files in package
-- Updated README
+- Renamed HRDisplay to HRDisplayTriple
+- Fixed a bug with the heart color not changing when beating
+- Added prefabs using [Modular Avatar](https://github.com/bdunderscore/modular-avatar) for easy installation on VRC avatars
+- Added animations and fx layers for VRC avatars
+- Moved regular prefabs to "OtherPrefabs" folder
