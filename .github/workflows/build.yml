@@ -43,4 +43,4 @@ jobs:
           generate_release_notes: true
           append_body: true
           files: |
-            output/HRDisplay_v${{ env.GITHUB_REF_NAME }}.unitypackage.unitypackage
+            output/HRDisplay_${{ env.GITHUB_REF_NAME }}.unitypackage.unitypackage
