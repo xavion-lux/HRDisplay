@@ -13,9 +13,9 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-	<li><a href="#installation">Installation</a></li>
         <li><a href="#usage">Usage</a></li>
         <li><a href="#customization">Customization</a></li>
+	      <li><a href="#installation-for-vrchat">Installation for VRChat</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -29,37 +29,33 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
 
 ## Getting Started
 
-## Installation
-
-<ol>
-  <li>Download the latest release from <a href="https://github.com/xavion-lux/HRDisplay/releases/latest">here</a>.</li>
-	<li>Import the downloaded unitypackage in your project.</li>
-</ol>
-
 ### Usage
 
-Two variants of the shader exist. One controlled with a single property, `HRDisplaySingle`, and the other with 3 properties, one for each decimal place. Choose the easiest version to set up with your environment.
+This shader is primarily designed to be used with other projects like [VRCOSC](https://github.com/VolcanicArts/VRCOSC) or [Pulsoid-to-VRChat-OSC](https://github.com/Sonic853/pulsoid-to-vrchat-osc) to control avatar parameters with OSC.</br>
+For installation on VRChat avatars, skip to [Installation for VRChat](#installation-for-vrchat).
 
-Each variant of the shader has one prefab that you can simply drag and drop where needed.</br>
-You can then change the displayed value using the `Hundreds`, `Tens` and `Units` material properties or the `BPM` property depending on which variant of the shader you use.
+Two variants of the shader exist. One controlled with a single property, `HRDisplaySingle`, and `HRDisplayTriple` with 3 properties, one for each decimal place. Choose the easiest version to set up with your environment.
 
-This shader is made to be used with other projects like [VRCOSC](https://github.com/VolcanicArts/VRCOSC) or [Pulsoid-to-VRChat-OSC](https://github.com/Sonic853/pulsoid-to-vrchat-osc) to control avatar parameters with OSC.</br>
-For now you can go take a look at these projects on how to implement the controls on your avatar to change the displayed value with OSC.
+The display can be controlled using the `Hundreds`, `Tens` and `Units` material properties or the `BPM` property depending on which variant of the shader you use.
 
 ### Customization
 
 You can customize the shader by providing your own textures for the heart as well as the numbers.</br>
 A template for the number texture is provided for you to create your own number textures.
 
+## Installation for VRChat
+
+https://github.com/xavion-lux/HRDisplay/assets/57081039/a63f4dfc-e889-45bc-82c7-208bb04bc0f4
+
+<ol>
+  <li>Import <a href="https://modular-avatar.nadena.dev">Modular Avatar</a> in your already existing project with the VRChat Creator Companion or by downloading the latest release from <a href="https://github.com/bdunderscore/modular-avatar/releases/latest">here</a>.</li>
+  <li>Download and import the latest release of HRDisplay from <a href="https://github.com/xavion-lux/HRDisplay/releases/latest">here</a>.</li>
+  <li>Go to the VRChat folder in HRDisplay and drag and drop the one of the prefab (using one or three parameters to control the display) to the desired location in your armature.</li>
+  <li>Move and resize the display to your liking.</li>
+  <li>You're avatar is now ready for upload! Modular Avatar will take care of merging the FX layers and parameters when uploading automatically, without permanently modifying your avatar.</li>
+</ol>
+
 If you experience issues with your textures from a long distances double check the mipmap settings for your texture in Unity.
-
-## Roadmap
-
-<ul>
-  <li>Add in-depth instructions for VRChat avatars</li>
-  <li>Add brightness slider</li>
-  <li>Add a lit version of the shader</li>
-</ul>
 
 ## Contributions
 
