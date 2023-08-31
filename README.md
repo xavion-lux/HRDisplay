@@ -18,7 +18,6 @@ HRDisplay is a custom shader written in HLSL for Unity's built-in render pipelin
 	      <li><a href="#installation-for-vrchat">Installation for VRChat</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
   </ul>
 </details>
