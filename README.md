@@ -41,7 +41,8 @@ The display can be controlled using the `Hundreds`, `Tens` and `Units` material 
 ### Customization
 
 You can customize the shader by providing your own textures for the heart as well as the numbers.</br>
-A template for the number texture is provided for you to create your own number textures.
+A template for the number texture is provided for you to create your own number textures.</br>
+If you experience issues with your textures from a long distances double check the mipmap settings for your texture in Unity.
 
 ## Installation for VRChat
 
@@ -52,10 +53,11 @@ https://github.com/xavion-lux/HRDisplay/assets/57081039/a63f4dfc-e889-45bc-82c7-
   <li>Download and import the latest release of HRDisplay from <a href="https://github.com/xavion-lux/HRDisplay/releases/latest">here</a>.</li>
   <li>Go to the VRChat folder in HRDisplay and drag and drop the one of the prefab (using one or three parameters to control the display) to the desired location in your armature.</li>
   <li>Move and resize the display to your liking.</li>
+  <li>Select the prefab, and remap the parameter(s) listed in the MA Parameter component to the path(s) of the parameter(s) sent by your OSC provider. (ex.: VRCOSC/Heartrate/Normalised)
   <li>You're avatar is now ready for upload! Modular Avatar will take care of merging the FX layers and parameters when uploading automatically, without permanently modifying your avatar.</li>
 </ol>
 
-If you experience issues with your textures from a long distances double check the mipmap settings for your texture in Unity.
+Note: If you use the `Single` variant, the animation provided is made for values normalised from 0 to 240 (defaults for [VRCOSC](https://github.com/VolcanicArts/VRCOSC)). Set your lower and upper normalisation bounds to 0 and 240 respectively in your OSC software or edit the animations provided in the package to match your normalisation range.
 
 ## Contributions
 
