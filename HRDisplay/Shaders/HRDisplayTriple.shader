@@ -208,7 +208,7 @@ Shader "xavion-lux/HRDisplayTriple"
 				
                 o.bpm = _Hundreds * 100 + _Tens * 10 + _Units;
 
-                half targetscale = sin(_Time * o.bpm * 2) * half(0.8) + 4;
+                half targetscale = 4 - (pow(abs(sin(_Time * o.bpm)), int(20)) + pow(abs(sin(_Time * o.bpm - half(1.1))), int(10)) * half(0.5));
 
 				
                 v.uv += half2(-0.325, -0.015);
@@ -221,7 +221,7 @@ Shader "xavion-lux/HRDisplayTriple"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed m = sin(_Time * i.bpm * 2 + fixed(3.14))/2 + fixed(0.7);
+                fixed m = (pow(abs(sin(_Time * i.bpm + half(3.14))), int(15)) + pow(abs(sin(_Time * i.bpm + half(3.14) - half(1.1))), int(10)) * half(0.5))*0.7 + half(0.35);
                 fixed4 col = UNITY_SAMPLE_TEX2D(_HeartTex, i.uv);
                 col.r *= m;
                 col.g *= m;

@@ -198,9 +198,8 @@
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
 				
-                half targetscale = sin(_Time * _BPM * 2) * half(0.8) + 4;
-
-				
+                half targetscale = 4 - (pow(sin(_Time * _BPM), int(20)) + pow(sin(_Time * _BPM - half(1.1)), int(10)) * half(0.5));
+                                    
                 v.uv += half2(-0.325, -0.015);
                 o.uv = scale(v.uv, targetscale);
                 
@@ -211,7 +210,7 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed m = sin(_Time * _BPM * 2 + fixed(3.14))/2 + fixed(0.7);
+                fixed m = (pow(abs(sin(_Time * _BPM + half(3.14))), int(15)) + pow(abs(sin(_Time * _BPM + half(3.14) - half(1.1))), int(10)) * half(0.5))*0.7 + half(0.35);
                 fixed4 col = UNITY_SAMPLE_TEX2D(_HeartTex, i.uv);
                 col.r *= m;
                 col.g *= m;
