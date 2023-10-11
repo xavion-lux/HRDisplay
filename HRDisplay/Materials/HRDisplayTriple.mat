@@ -43,6 +43,7 @@ Material:
     - _BPM: 0
     - _HeartAlphaCutoff: 0.85
     - _HeartCutoff: 0.501
+    - _HideLeadingZeros: 0
     - _Hundreds: 0
     - _NumberAlphaCutoff: 0.5
     - _NumberCutoff: 0.414
