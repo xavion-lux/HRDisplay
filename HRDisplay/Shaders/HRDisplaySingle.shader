@@ -12,6 +12,8 @@
 
     SubShader
     {
+        ZWrite off
+
         Tags
         { 
             "Queue" = "Transparent"

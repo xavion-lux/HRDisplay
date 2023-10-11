@@ -14,6 +14,8 @@ Shader "xavion-lux/HRDisplayTriple"
 
     SubShader
     {
+        ZWrite off
+
         Tags
         { 
             "Queue" = "Transparent"
