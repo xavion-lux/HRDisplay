@@ -134,4 +134,4 @@ MonoBehaviour:
   layerType: 5
   deleteAttachedAnimator: 0
   pathMode: 0
-  matchAvatarWriteDefaults: 0
+  matchAvatarWriteDefaults: 1
